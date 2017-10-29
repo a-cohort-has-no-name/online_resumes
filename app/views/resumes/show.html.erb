@@ -1,6 +1,34 @@
 Here is your profile: 
 
 <div id="app">
+
+
  {{ message }}
+
+
+<!-- PROFILE INFO  -->
+<!-- PROFILE END -->
+
+
+<!-- EXPERIENCE -->
+<div class="experience" v-for="experience in student.experiences" >
+  <h4> Title: {{ experience.job_title }} </h4>
+  <h5> Company: {{ experience.company_name }} </h5>
+  <p> Start Date: {{ experience.start_date }} to End Date: {{ experience.end_date }} </p>
+  <p> Job Description: {{ experience.details }} </p>
+</div>
+<!-- EXPERIENCE END -->
+
+
+<!-- EDUCATION  -->
+<div class="education" v-for="education in student.education" >
+  <h4> Degree: {{ education.degree }} </h4>
+  <h5> University Name: {{ education.university_name }} </h5>
+  <p> Start Date: {{ education.start_date }} to End Date: {{ education.end_date }} </p>
+  <p> Details: {{ education.details }} </p>
+</div>
+<!-- EDUCATION END -->
+
+
 </div>
 
