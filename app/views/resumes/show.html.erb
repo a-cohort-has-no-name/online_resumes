@@ -10,23 +10,38 @@ Here is your profile:
 <!-- PROFILE END -->
 
 
-<!-- EXPERIENCE -->
-<div class="experience" v-for="experience in student.experiences" >
+<!-- EXPERIENCE WITHOUT DATA-->
+<h3> Experience </h3>
+  <h4> Title: Boss </h4>
+  <h5> Company: Big Fancy Company </h5>
+  <p> Start Date: 2/23/2016 to End Date: present </p>
+  <p> Job Description: I run this shit </p>
+
+
+<!-- EXPERIENCE WITH DATA -->
+<!-- <div class="experience" v-for="experience in student.experiences" >
   <h4> Title: {{ experience.job_title }} </h4>
   <h5> Company: {{ experience.company_name }} </h5>
   <p> Start Date: {{ experience.start_date }} to End Date: {{ experience.end_date }} </p>
   <p> Job Description: {{ experience.details }} </p>
-</div>
+</div> -->
 <!-- EXPERIENCE END -->
 
+<!-- EDUCATION WITHOUT DATA -->
+<h3> Education </h3>
+  <h4> Degree: Computer Science </h4>
+  <h5> University: Yale </h5>
+  <p> Start Date: August 2010 to End Date: May 2014 </p>
+  <p> Details: Graduated Suma Cum Lade </p>
 
-<!-- EDUCATION  -->
-<div class="education" v-for="education in student.education" >
+
+<!-- EDUCATION WITH DATA -->
+<!-- <div class="education" v-for="education in student.education" >
   <h4> Degree: {{ education.degree }} </h4>
   <h5> University Name: {{ education.university_name }} </h5>
   <p> Start Date: {{ education.start_date }} to End Date: {{ education.end_date }} </p>
   <p> Details: {{ education.details }} </p>
-</div>
+</div> -->
 <!-- EDUCATION END -->
 
 
