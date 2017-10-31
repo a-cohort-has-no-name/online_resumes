@@ -50,50 +50,30 @@
 
   <!-- WORK EXPERIENCE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="content">
+      <div class="work-experience">
+        <h1 class="heading"> Work Experience</h1>
+        <div class="info" v-for="experience in student.experiences" >
+          <p class="sub-heading">{{ experience.job_title }} @ {{ experience.company_name }}</p>
+          <p class="duration">{{ experience.start_date }} - {{ experience.end_date }}</p>
+          <p> {{ experience.details }} </p>
+        </div>
+      </div>
 
   <!-- END WORK EXPERIENCE -->
 
 
   <!-- EDUCATION INFO -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
+      <div class="education">
+        <h1 class="heading">Education</h1>
+        <div class="info" v-for="education in student.education" >
+          <p class="sub-heading"> {{ education.degree }} @ {{ education.university_name }}</p>
+          <p class="duration">{{ education.start_date }} - {{ experience.end_date }}</p>
+          <p>{{ education.details }}</p>
+        </div>
+      </div>
+    </div>
 
   <!-- END EDUCATION INFO -->
 
@@ -132,6 +112,5 @@
     </div>
   </body>
   </html>
-
 </div>
 
