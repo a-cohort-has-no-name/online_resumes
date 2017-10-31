@@ -1,55 +1,56 @@
-Here is your profile: 
+<div id="app">
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Resume</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="sidebar-top">
-        <img class="profile-image" src="http://demo.deviserweb.com/cv/assets/images/profile-img.jpg" />
-        <div class="profile-basic">
-          <h1 class="name">student.first_name student.last_name</h1>
-          <h4 class="designation"> UI & UX Expert </h4>
+  <!-- HTML FORMAT FROM CODEPEN: https://codepen.io/marci640/pen/VrYZOz -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>My Resume</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+  <body>
+    <div class="container">
+
+
+  <!-- PROFILE INFO -->
+      <div class="sidebar">
+        <div class="sidebar-top">
+          <img class="profile-image" src="{{photo}}" />
+          <div class="profile-basic">
+            <h1 class="name">{{firstName}} {{lastName}}</h1>
+          </div>
+        </div>
+        <div class="profile-info">
+          <p> {{bio}}   
+          </p>
+        </div>
+        <div class="profile-info">
+          <p class="key">Contact : </p>
+          <p class="value">{{phoneNumber}}</p>
+        </div>
+
+        <div class="profile-info">
+          <p class="key" >Email : </p>
+          <p class="value" >{{email}}</p>
+        </div>
+
+        <div class="profile-info">
+          <p class="key" >Address : </p>
+          <p class="value" >{{address}}</p>
+        </div>
+        <div class="profile-info">
+          <a class="social-media" href="{{linkedinUrl}}" target="_blank" >LinkedIn</a>
+          <a class="social-media" href="{{twitterHandle}}" target="_blank" >Twitter</a>
+          <a class="social-media" href="{{personalBlogUrl}}" target="_blank" >Personal Blog</a>
+          <a class="social-media" href="{{resumeUrl}}" target="_blank" >Resume</a>
+          <a class="social-media" href="{{githubUrl}}" target="_blank" >Github</a>
         </div>
       </div>
-      <div class="profile-info">
-        <p> student.short_bio   
-        </p>
-      </div>
-      <div class="profile-info">
-        <p class="key">Contact : </p>
-        <p class="value">student.phone_number</p>
-      </div>
+  <!-- END PROFILE INFO -->
 
-      <div class="profile-info">
-        <p class="key" >Email : </p>
-        <p class="value" >student.email</p>
-      </div>
 
-      <div class="profile-info">
-        <p class="key" >Address : </p>
-        <p class="value" >
-          24 Golden Tower<br/>
-          Amborkhana, Sylhet.<br/>
-          SYL-3RF87W
-        </p>
-      </div>
+  <!-- WORK EXPERIENCE -->
 
-      <div class="profile-info">
-        <a class="social-media" href="https://facebook.com/anupama.panchal" target="_blank" >Facebook</a>
-        <a class="social-media" href="https://facebook.com/anupama.panchal" target="_blank" >Linkedin</a>
-        <a class="social-media" href="https://facebook.com/anupama.panchal" target="_blank" >Twitter</a>
-        <a class="social-media" href="https://facebook.com/anupama.panchal" target="_blank" >Instagram</a>
-      </div>
-    </div>
-
-<!-- WORK EXPERIENCE  -->
     <div class="content">
-
       <div class="work-experience">
         <h1 class="heading"> Work Experience</h1>
         <div class="info" v-for="experience in student.experiences" >
@@ -59,7 +60,11 @@ Here is your profile:
         </div>
       </div>
 
-<!-- EDUCATION -->
+  <!-- END WORK EXPERIENCE -->
+
+
+  <!-- EDUCATION INFO -->
+      
       <div class="education">
         <h1 class="heading">Education</h1>
         <div class="info" v-for="education in student.education" >
@@ -70,47 +75,42 @@ Here is your profile:
       </div>
     </div>
 
-  </div>
-</body>
-</html>
+  <!-- END EDUCATION INFO -->
 
 
+  <!-- SKILLS INFO -->
+        <div class="skills">
+          <h1 class="heading">Skills</h1>
+          <div class="info">
+            <ul>
+              <li v-for="skill in skills">{{skill}}</li>
+            </ul>
+          </div>
+        </div>
+  <!-- END SKILLS INFO -->
 
 
+  <!-- CAPSTONE INFO -->
+        <div class="capstone">
+          <h1 class="heading">Capstone</h1>
+          <div class="info">
+            <p class="sub-heading">{{capstoneName}}</p>
+            <p class="sub-heading">Desription:</p>
+            <p>{{description}}</p>
+          </div>
+          <div class="info">
+            <p class="sub-heading">URL:</p>
+            <p>{{capstoneUrl}}</p>
+          </div>
+          <div class="info">
+            <p>{{screenshot}}</p>
+          </div>
+        </div>
+  <!-- END CAPSTONE INFO -->
 
-
-
-
-
-
-<div id="app">
-
-
- {{ message }}
-
-<!-- PROFILE INFO  -->
-<!-- PROFILE END -->
-
-
-<!-- EXPERIENCE WITH DATA -->
-<!-- <div class="experience" v-for="experience in student.experiences" >
-<h4> Company: {{ experience.company_name }} </h4>
-<h4> Title: {{ experience.job_title }} </h4>
-<p> Start Date: {{ experience.start_date }} to End Date: {{ experience.end_date }} </p>
-<p> Job Description: {{ experience.details }} </p>
-</div> -->
-<!-- EXPERIENCE END -->
-
-
-<!-- EDUCATION WITH DATA -->
-<!-- <div class="education" v-for="education in student.education" >
-  <h4> Degree: {{ education.degree }} </h4>
-  <h5> University Name: {{ education.university_name }} </h5>
-  <p> Start Date: {{ education.start_date }} to End Date: {{ education.end_date }} </p>
-  <p> Details: {{ education.details }} </p>
-</div> -->
-<!-- EDUCATION END -->
-
-
+      </div>
+    </div>
+  </body>
+  </html>
 </div>
 

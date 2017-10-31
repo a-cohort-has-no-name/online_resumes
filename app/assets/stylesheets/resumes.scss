@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 body {
       background: #eae8e7;
       color: #767270;
@@ -61,7 +60,8 @@ body {
       vertical-align: top;
     }
 
-    .work-experience, .education {
+
+    .work-experience, .education, .skills, .capstone {
       margin-bottom: 30px;
       padding: 5% 2% 5% 10%;
       background: white;
@@ -81,4 +81,3 @@ body {
     .duration {
       color: #5da4d9;
       font-size:12px;
-    }
