@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     "phone":"6085328974",
     "bio":"Billionaire industrialist and notorious playboy. Also secretly impersonifies the crime-fighting vigilante known as Batman.",
     "linkedin":"https://www.linkedin.com/in/batman-bruce-wayne-43275131/",
-    "twitter":"thebatman",
+    "twitter":"https://twitter.com/wiciwici1987",
     "blogUrl":"https://www.lego.com/en-us/batmanmovie/bloggithub",
     "resumeUrl":"",
     "githubUrl":"https://github.com/batmanjs/batman",
