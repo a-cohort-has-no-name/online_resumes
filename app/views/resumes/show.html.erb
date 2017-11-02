@@ -1,10 +1,13 @@
+
 <div id="app">
-    <div class="container">
+  <div class="container">
 
   <!-- PROFILE INFO -->
       <div class="sidebar">
         <div class="sidebar-top">
+          
           <img v-bind:src="students[<%= @id %>].photo">
+        
           <div class="profile-basic">
             <h1 class="name">{{students[<%= @id %>].first_name}} {{students[<%= @id %>].last_name}}</h1>
           </div>
@@ -25,11 +28,11 @@
 
 
         <div class="profile-info">
-          <a class="social-media" v-bind:href="students[<%= @id %>].linkedin_url" target="_blank" >LinkedIn</a>
-          <a class="social-media" v-bind:href="students[<%= @id %>].twitter_handle" target="_blank" >Twitter</a>
-         <!--  <a class="social-media" v-bind:href="students[0].blogUrl" target="_blank" >Personal Blog</a> -->
-          <a class="social-media" v-bind:href="students[<%= @id %>].resume_url" target="_blank" >Resume</a>
-          <a class="social-media" v-bind:href="students[<%= @id %>].github_url" target="_blank" >Github</a>
+          <a class="social-media" v-bind:href="'https://www' + students[<%= @id %>].linkedin_url">LinkedIn</a>
+          <a class="social-media" v-bind:href="'https://www' + students[<%= @id %>].twitter_handle">Twitter</a>
+          <a class="social-media" v-bind:href="'https://www' + students[<%= @id %>].personal_website">Personal Website</a>
+          <a class="social-media" v-bind:href="'https://www' + students[<%= @id %>].resume_url">Resume</a>
+          <a class="social-media" v-bind:href="'https://www' + students[<%= @id %>].github_url">Github</a>
         </div>
       </div>
   <!-- END PROFILE INFO -->
@@ -40,10 +43,11 @@
     <div class="content">
       <div class="work-experience">
         <h1 class="heading"> Work Experience</h1>
-        <!-- <div class="info" v-for="experience in experiences" v-if="isValidExperience(experience)"> -->
-          <p class="sub-heading">{{ experiences[<%= @id %>].job_title }} @ {{ experiences[<%= @id %>].company_name }}</p>
-          <p class="duration">{{ experiences[<%= @id %>].start_date }} - {{ experiences[<%= @id %>].end_date }}</p>
-          <p> {{ experiences[<%= @id %>].details }} </p>
+          <div v-for="experience in students[<%= @id %>].experiences">
+            <p class="sub-heading">{{ experience.job_title }} @ {{ experience.company_name }}</p>
+            <p class="duration">{{ experience.start_date }} - {{ experience.end_date }}</p>
+            <p> {{ experience.details }} </p>
+          </div>
       </div>
 
   <!-- END WORK EXPERIENCE -->
@@ -52,9 +56,11 @@
       
       <div class="education">
         <h1 class="heading">Education</h1>
-          <p class="sub-heading"> {{ educations[<%= @id %>].degree }} @ {{ educations[<%= @id %>].university_name }}</p>
-          <p class="duration">{{ educations[<%= @id %>].start_date }} - {{ educations[<%= @id %>].end_date }}</p>
-          <p>{{ educations[<%= @id %>].details }}</p>
+          <div v-for="education in students[<%= @id %>].education">
+            <p class="sub-heading"> {{ education.degree }} @ {{ education.university_name }}</p>
+            <p class="duration">{{ education.start_date }} - {{ education.end_date }}</p>
+            <p>{{ education.details }}</p>
+          </div>
       </div>
 
   <!-- END EDUCATION INFO -->
@@ -65,7 +71,9 @@
           <h1 class="heading">Skills</h1>
           <div class="info">
             <ul>
-              <li>{{skills[<%= @id %>].skill_name}}</li>
+              <div v-for="skill in students[<%= @id %>].skills">
+                <li>{{skill.skill_name}}</li>
+              </div>
             </ul>
           </div>
         </div>
@@ -74,20 +82,24 @@
   <!-- CAPSTONE INFO -->
         <div class="capstone">
           <h1 class="heading">Capstone</h1>
-            <p class="sub-heading">{{capstones[<%= @id %>].capstone_name}}</p>
-            <p class="sub-heading">Desription:</p>
-            <p>{{capstones[<%= @id %>].description}}</p>
-            <p class="sub-heading">URL:</p>
-            <p>{{capstones[<%= @id %>].capstone_url}}</p>
-            <img v-bind:src="capstones[<%= @id %>].screenshot">
+            <div v-for="capstone in students[<%= @id %>].capstones">
+              <p class="sub-heading">{{capstone.capstone_name}}</p>
+              <p class="sub-heading">Desription:</p>
+              <p>{{capstone.description}}</p>
+              <p class="sub-heading">URL:</p>
+              <p>{{capstone.capstone_url}}</p>
+              <img v-bind:src="capstone.screenshot">
+            </div>
         </div>
   <!-- END CAPSTONE INFO -->
-
-     <!--  <a class="twitter-timeline" v-bind:href="cors.io/?=https://twitter.com/josepoggioli">Tweets by {{students[<%= @id %>].first_name}} {{students[<%= @id %>].last_name}}</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-
-
-
     </div>
-
   </div>
+</div>
+
+<div class="container">
+    <div class="sidebar">
+    </div>
+    <div class="content"> 
+      <a class="twitter-timeline" href="https://twitter.com/josepoggioli?ref_src=twsrc%5Etfw">Tweets by josepoggioli</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
 </div>

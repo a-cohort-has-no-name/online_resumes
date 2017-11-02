@@ -2,10 +2,10 @@
   <div class="container">
     <div class=".index-content">
       <div class="work-experience">
-        <h1 class="heading"> Students </h1>
+        <h1 class="heading"> Students Resume Homepage </h1>
         <div class="info" v-for="(student,index) in students" >
           <img class="card" v-bind:src="student.photo">
-          <h5 class="student-heading"><a v-bind:href="/resume/+ index">{{ student.first_name }} {{ student.last_name }}</a></h5>
+          <h5 class="student-heading"><a v-bind:href="/resumes/+ index">{{ student.first_name }} {{ student.last_name }}</a></h5>
           <p class="sub-heading">{{ student.bio }}</p>
         </div>
       </div>
