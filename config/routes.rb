@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get "/resumes" => "resumes#show"
-  get "/test" => "resumes#test"
+  get "/index" => "resumes#index"
+  get "/resume/:id" => "resumes#show"
 end

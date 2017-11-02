@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
    el: '#app',
    data: {
      message: 'Hello Vue!',
+     students: [],
+     experiences:[],
+     educations:[],
+     skills:[],
+     capstones:[],
+     currentId: ""
+     // student: [],
+     // currentId: "1",
      student: [
   { "id":1,
     "firstName":"Bruce",
@@ -86,8 +94,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
    }
 
    ]
-   },
+                   },
    mounted: function() {
+
+     $.get('https://macabre-asylum-90626.herokuapp.com/students', function(result){
+        //console.log(result);  
+        this.students = result;
+      }.bind(this));
+     
+     $.get('https://macabre-asylum-90626.herokuapp.com/experiences', function(result){
+        //console.log(result);  
+        this.experiences = result;
+      }.bind(this));
+
+      $.get('https://macabre-asylum-90626.herokuapp.com/educations', function(result){
+        //console.log(result);  
+        this.educations = result;
+      }.bind(this));
+
+       $.get('https://macabre-asylum-90626.herokuapp.com/skills', function(result){
+        //console.log(result);  
+        this.skills = result;
+      }.bind(this));
+
+       $.get('https://macabre-asylum-90626.herokuapp.com/capstones', function(result){
+        //console.log(result);  
+        this.capstones = result;
+      }.bind(this));
 
    },
    methods: {

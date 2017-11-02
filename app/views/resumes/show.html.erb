@@ -4,35 +4,32 @@
   <!-- PROFILE INFO -->
       <div class="sidebar">
         <div class="sidebar-top">
-          <img v-bind:src="student[0].photo">
+          <img v-bind:src="students[0].photo">
           <div class="profile-basic">
-            <h1 class="name">{{student[0].firstName}} {{student[0].lastName}}</h1>
+            <h1 class="name">{{students[0].first_name}} {{students[0].last_name}}</h1>
           </div>
         </div>
         <div class="profile-info">
-          <p> {{student[0].bio}}   
+          <p> {{students[0].bio}}   
           </p>
         </div>
         <div class="profile-info">
           <p class="key">Contact : </p>
-          <p class="value">{{student[0].phone}}</p>
+          <p class="value">{{students[0].phone_number}}</p>
         </div>
 
         <div class="profile-info">
           <p class="key" >Email : </p>
-          <p class="value" >{{student[0].email}}</p>
+          <p class="value" >{{students[0].email}}</p>
         </div>
 
+
         <div class="profile-info">
-          <p class="key" >Address : </p>
-          <p class="value" >{{student[0].address}}</p>
-        </div>
-        <div class="profile-info">
-          <a class="social-media" v-bind:href="student[0].linkedin" target="_blank" >LinkedIn</a>
-          <a class="social-media" v-bind:href="student[0].twitter" target="_blank" >Twitter</a>
-          <a class="social-media" v-bind:href="student[0].blogUrl" target="_blank" >Personal Blog</a>
-          <a class="social-media" v-bind:href="student[0].resumeUrl" target="_blank" >Resume</a>
-          <a class="social-media" v-bind:href="student[0].githubUrl" target="_blank" >Github</a>
+          <a class="social-media" v-bind:href="students[0].linkedin_url" target="_blank" >LinkedIn</a>
+          <a class="social-media" v-bind:href="students[0].twitter_handle" target="_blank" >Twitter</a>
+         <!--  <a class="social-media" v-bind:href="students[0].blogUrl" target="_blank" >Personal Blog</a> -->
+          <a class="social-media" v-bind:href="students[0].resume_url" target="_blank" >Resume</a>
+          <a class="social-media" v-bind:href="students[0].github_url" target="_blank" >Github</a>
         </div>
       </div>
   <!-- END PROFILE INFO -->
@@ -43,26 +40,21 @@
     <div class="content">
       <div class="work-experience">
         <h1 class="heading"> Work Experience</h1>
-        <div class="info" v-for="experience in student[0].experiences" >
-          <p class="sub-heading">{{ experience.jobTitle }} @ {{ experience.company }}</p>
-          <p class="duration">{{ experience.startDate }} - {{ experience.endDate }}</p>
-          <p> {{ experience.details }} </p>
-        </div>
+        <!-- <div class="info" v-for="experience in experiences" v-if="isValidExperience(experience)"> -->
+          <p class="sub-heading">{{ experiences[0].job_title }} @ {{ experiences[0].company_name }}</p>
+          <p class="duration">{{ experiences[0].start_date }} - {{ experiences[0].end_date }}</p>
+          <p> {{ experiences[0].details }} </p>
       </div>
 
   <!-- END WORK EXPERIENCE -->
-
-
 
   <!-- EDUCATION INFO -->
       
       <div class="education">
         <h1 class="heading">Education</h1>
-        <div class="info" v-for="education in student[0].educations" >
-          <p class="sub-heading"> {{ education.degree }} @ {{ education.school }}</p>
-          <p class="duration">{{ education.startDate }} - {{ education.endDate }}</p>
-          <p>{{ education.details }}</p>
-        </div>
+          <p class="sub-heading"> {{ educations[0].degree }} @ {{ educations[0].university_name }}</p>
+          <p class="duration">{{ educations[0].start_date }} - {{ educations[0].end_date }}</p>
+          <p>{{ educations[0].details }}</p>
       </div>
 
   <!-- END EDUCATION INFO -->
@@ -73,7 +65,7 @@
           <h1 class="heading">Skills</h1>
           <div class="info">
             <ul>
-              <li v-for="skill in student[0].skills">{{skill.name}}</li>
+              <li>{{skills[0].skill_name}}</li>
             </ul>
           </div>
         </div>
@@ -82,18 +74,18 @@
   <!-- CAPSTONE INFO -->
         <div class="capstone">
           <h1 class="heading">Capstone</h1>
-          <div class="info" v-for="capstone in student[0].capstones">
-            <p class="sub-heading">{{capstone.capstoneName}}</p>
+            <p class="sub-heading">{{capstones[0].capstone_name}}</p>
             <p class="sub-heading">Desription:</p>
-            <p>{{capstone.description}}</p>
+            <p>{{capstones[0].description}}</p>
             <p class="sub-heading">URL:</p>
-            <p>{{capstone.capstoneUrl}}</p>
-            <p>{{capstone.screenshot}}</p>
-          </div>
+            <p>{{capstones[0].capstone_url}}</p>
+            <p>{{capstones[0].screenshot}}</p>
         </div>
   <!-- END CAPSTONE INFO -->
 
-      <a class="twitter-timeline" v-bind:href="student[0].twitter">Tweets by {{firstName}} {{lastName}}</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="twitter-timeline" v-bind:href="https://twitter.com/josepoggioli">Tweets by {{students[0].first_name}} {{students[0].last_name}}</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 
     </div>
 

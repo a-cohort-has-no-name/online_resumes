@@ -82,3 +82,27 @@ body {
       color: #5da4d9;
       font-size:12px;
     }
+
+    .index-content {
+      width: 78%;
+      margin-left: 2%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      height: 50%;
+      width: 50%;
+      display: block;
+      margin: auto;
+      padding:3px;
+      border:5px solid #4783c2;
+      background-color:#767270;;
+      }
+    .student-heading {
+      font-weight: bold;
+      color: #4783c2;
+      padding-top: 15px; 
+      }
